@@ -3,7 +3,7 @@
   <div class="login_box">
     <!-- 头像区域 -->
     <div class="avator_box">
-      <img src="../assets/logo.png" alt="">
+      <img src="../assets/tx.png" alt="">
     </div>
 
    <!-- from表单区域 -->
@@ -59,6 +59,7 @@ export default {
           return false
         }
         const { data: res } = await this.$http.post('login', this.loginForm)
+        // console.log(res)
         if (res.meta.status !== 200) {
           return this.$message.error('登录失败')
         }
