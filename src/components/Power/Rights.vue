@@ -50,7 +50,6 @@ export default {
 
 <style lang="less" scoped>
 .el-card{
-  margin-top: 15px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.15) !important;
 }
 </style>

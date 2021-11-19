@@ -327,16 +327,12 @@ export default {
 </script>
 
 <style lang="less" scoped>
-
 .tree-table {
   margin-top: 15px;
   font-size: 13px;
 }
-
 .el-cascader {
   width: 100%;
 }
-.el-card{
-  margin-top: 15px;
-}
+
 </style>

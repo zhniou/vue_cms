@@ -8,3 +8,15 @@ body,html,#app{
 .el-cascader-panel {
   height: 300px;
 }
+.el-card{
+  margin-top: 15px;
+}
+.el-pagination{
+  margin-top: 15px;
+}
+.el-table{
+  margin-top: 15px;
+}
+.el-tabs{
+  margin-top: 15px;
+}
