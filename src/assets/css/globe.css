@@ -1,5 +1,6 @@
 /* 全局样式 */
 body,html,#app{
+  font-size: 12px;
   height: 100%;
   margin: 0;
   padding: 0;
@@ -19,4 +20,13 @@ body,html,#app{
 }
 .el-tabs{
   margin-top: 15px;
+}
+.el-steps{
+  margin-top: 15px;
+}
+.el-step__title{
+  font-size: 13px;
+}
+.ql-editor{
+  min-height: 300px;
 }
