@@ -30,3 +30,6 @@ body,html,#app{
 .ql-editor{
   min-height: 300px;
 }
+.cell{
+  font-size: 13px;
+}
