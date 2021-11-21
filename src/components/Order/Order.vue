@@ -236,7 +236,6 @@ export default {
           location: ''
         }
       ]
-      console.log(this.progressInfo)
       this.progressDialogVisible = true
     }
   },

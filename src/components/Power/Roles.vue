@@ -201,7 +201,6 @@ export default {
         return this.$message.error('查询用户信息失败！')
       }
       this.editRolesList = res.data
-      console.log(this.editRolesList)
     },
     // 编辑角色
     editRoles () {
@@ -268,7 +267,6 @@ export default {
         return this.$message.error('请求权限数据失败')
       }
       this.rightsList = res.data
-      console.log(this.rightsList)
       // 递归获取三级节点的Id并保存到defKeys数组中  这样一打开分配对话框就会把数组里的id给勾选上 关闭还要把数组清空 要不然下次打开会累加
       this.getLeafKeys(role, this.defKeys)
       this.setRightDialogVisible = true
@@ -293,7 +291,6 @@ export default {
       const keys = [...this.$refs.treeRef.getCheckedKeys(), ...this.$refs.treeRef.getHalfCheckedKeys()]
       const idStr = keys.join(',')
       const { data: res } = await this.$http.post(`roles/${this.roleId}/rights`, { rids: idStr })
-      // console.log(res)
       if (res.meta.status !== 200) {
         return this.$message.error('分配权限失败')
       }

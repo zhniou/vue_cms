@@ -181,8 +181,6 @@ export default {
       }
 
       this.catelist = res.data
-
-      console.log(this.catelist)
     },
     // 级联选择框选中项变化，会触发这个函数
     handleChange () {
@@ -190,7 +188,6 @@ export default {
     },
     // tab 页签点击事件的处理函数
     handleTabClick () {
-      console.log(this.activeName)
       this.getParamsData()
     },
     // 获取参数的列表数据 级联选择器的选中项和分页面板的选中项改变了都要调用这个函数发送请求
@@ -204,7 +201,6 @@ export default {
       }
 
       // 证明选中的是三级分类
-      console.log(this.selectedCateKeys)
       // 根据所选分类的Id，和当前所处的面板（many或only）（都由计算属性写好了），请求对应的数据
       const { data: res } = await this.$http.get(
         `categories/${this.cateId}/attributes`,
@@ -228,7 +224,6 @@ export default {
       })
 
       // 返回的数据要分开存储 分页面板根据情况进行渲染对应的数据 根据点击的面板决定返回的数据存储到哪里
-      console.log(res.data)
       if (this.activeName === 'many') {
         this.manyTableData = res.data
       } else {

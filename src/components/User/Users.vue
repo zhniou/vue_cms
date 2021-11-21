@@ -228,7 +228,6 @@ export default {
     // 监听状态改变事件
     async userStatusChange (userinfo) {
       const { data: res } = await this.$http.put(`users/${userinfo.id}/state/${userinfo.mg_state}`)
-      console.log(res)
       if (res.meta.status !== 200) {
         userinfo.mg_status = !userinfo.mg_status
         return this.$message.error('更新用户状态失败！')
@@ -251,7 +250,6 @@ export default {
       if (res.meta.status !== 200) {
         return this.$message.error('查询用户信息失败！')
       }
-      console.log(res.data)
       this.editUserForm = res.data
     },
     // 点击添加用户确定按钮 表单预验证 添加用户
@@ -319,7 +317,6 @@ export default {
     },
     // 点击按钮 分配角色
     async saveRoleInfo () {
-      console.log(this.selectedRoleId)
       if (!this.selectedRoleId) {
         return this.$message.error('请选择分配的角色！')
       }
@@ -329,7 +326,6 @@ export default {
           rid: this.selectedRoleId
         }
       )
-      console.log(res)
       if (res.meta.status !== 200) {
         return this.$message.error('更新角色失败！')
       }

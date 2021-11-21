@@ -39,7 +39,6 @@ export default {
         return this.$message.error('获取权限列表失败！')
       }
       this.RightLits = res.data
-      console.log(this.RightLits)
     }
   },
   created () {

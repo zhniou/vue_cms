@@ -199,7 +199,6 @@ export default {
         this.cateList = res.data.result
         // 为总数据条数赋值
         this.total = res.data.total
-        console.log(this.cateList)
       }
     },
     //  监听pagesize改变
@@ -232,7 +231,6 @@ export default {
     },
     // 选择项发生变化触发这个函数
     parentCateChanged () {
-      console.log(this.selectedKeys)
       // 如果 selectedKeys数组中的length 大于 0, 证明选中的父级分类
       // 反之, 就说明没有选中任何父级分类
       if (this.selectedKeys.length > 0) {
@@ -249,7 +247,6 @@ export default {
     },
     // 点击按钮, 添加新的分类
     async addCate () {
-      // console.log(this.addCateForm)
       this.$refs.addCateFormRef.validate(async valid => {
         if (!valid) return
         const { data: res } = await this.$http.post('categories', this.addCateForm)
@@ -289,7 +286,6 @@ export default {
         const { data: res } = await this.$http.put(`categories/${this.editCateForm.cat_id}`, {
           cat_name: this.editCateForm.cat_name
         })
-        console.log(res)
         if (res.meta.status !== 200) {
           return this.$message.error('更新分类失败！')
         }

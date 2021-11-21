@@ -166,7 +166,6 @@ export default {
         return this.$message.error('获取商品分类失败！')
       }
       this.CateList = res.data
-      console.log(this.CateList)
     },
     // 获取商品分类参数列表
     async getmanyParamsList () {
@@ -181,7 +180,6 @@ export default {
       })
 
       this.manyTabData = res.data
-      console.log(this.manyTabData)
     },
     // 获取静态属性列表
     async getonlyparamsList () {
@@ -192,7 +190,6 @@ export default {
       }
 
       this.onlyTabData = res.data
-      console.log(this.onlyTabData)
     },
     // 当级联选择器选择项发生变化
     handleChange () {
@@ -221,7 +218,6 @@ export default {
     },
     // 图片预览
     handlePreview (file) {
-      console.log(file)
       this.previewPath = file.response.data.url
       this.previewDialogVisible = true
     },
@@ -233,7 +229,6 @@ export default {
       const i = this.addForm.pics.findIndex(x => x.pic === filePath)
       // 3. 调用数组的 splice 方法，把图片信息对象，从 pics 数组中移除
       this.addForm.pics.splice(i, 1)
-      console.log(this.addForm)
     },
     // 图片上传成功时触发
     handleSuccess (response) {
@@ -241,7 +236,6 @@ export default {
       const picInfo = { pic: response.data.tmp_path }
       // 2. 将图片信息对象存储到pics数组中
       this.addForm.pics.push(picInfo)
-      console.log(this.addForm)
     },
     add () {
       // 先进行预验证
@@ -271,12 +265,10 @@ export default {
 
         // 把addForm里推进去的attrs复制给新拷贝出来的form 再发送请求
         form.attrs = this.addForm.attrs
-        console.log(form)
 
         // 发起请求添加商品
         // 商品的名称，必须是唯一的
         const { data: res } = await this.$http.post('goods', form)
-        console.log(res)
         if (res.meta.status !== 201) {
           return this.$message.error('添加商品失败！')
         }
