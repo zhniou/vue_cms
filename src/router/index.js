@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 
+<<<<<<< HEAD
 // import Login from '@/components/Login.vue'
 const Login = () => import(/* webpackChunkName:"login_home_welcome" */ '@/components/Login.vue')
 // import Home from '@/components/Home.vue'
@@ -53,17 +54,65 @@ const routes = [
       { path: '/reports', component: Report }
     ]
   }
+=======
+Vue.use(VueRouter)
+
+const routes = [
+  { path: '/', redirect: '/index' },
+  // 首页
+  { path: '/index', component: () => import('@/views/Index.vue') },
+  // 登录
+  { path: '/login', component: () => import('@/views/Login.vue') },
+  // 搜索
+  {
+    path: '/search',
+    component: () => import('@/views/Search.vue'),
+    redirect: '/search/hotsearch',
+    children: [
+      {
+        // 热搜
+        path: '/search/hotsearch',
+        component: () => import('@/views/HotSearch.vue')
+      },
+      // 搜索结果
+      {
+        path: '/search/searchconent',
+        component: () => import('@/views/searchContent.vue')
+      }
+    ]
+  },
+  // 日常推荐
+  { path: '/dailyrecommend', component: () => import('@/views/DailyRecommend.vue') },
+  // 歌单广场
+  { path: '/playlist', component: () => import('@/views/Playlist.vue') },
+  // 歌单详情
+  { path: '/playlistdetail', component: () => import('@/views/PlayListDetail.vue') },
+  // 排行榜
+  { path: '/toplist', component: () => import('@/views/Toplist.vue') },
+  // 歌手详情
+  { path: '/singerdetail', component: () => import('@/views/SingerDetail.vue') },
+  // 个人中心
+  { path: '/mine', component: () => import('@/views/mine.vue') },
+  // 私人FM
+  { path: '/fm', component: () => import('@/views/fm.vue') },
+  // 用户信息页面
+  { path: '/userinfo', name: 'userinfo', component: () => import('@/views/userinfo.vue') }
+>>>>>>> 2b029d5 (20200609)
 ]
 
 const router = new VueRouter({
   routes
 })
 
+<<<<<<< HEAD
 // 挂载路由导航守卫
+=======
+>>>>>>> 2b029d5 (20200609)
 router.beforeEach((to, from, next) => {
   if (to.path === '/login') {
     return next()
   }
+<<<<<<< HEAD
   // 获取token值
   const tokenStr = window.sessionStorage.getItem('token')
   // 如果没有登录
@@ -71,6 +120,12 @@ router.beforeEach((to, from, next) => {
     return next('/login')
   }
   // 若访问的其他页面，且存在token值
+=======
+  const tokenStr = window.localStorage.getItem('token')
+  if (!tokenStr) {
+    return next('/login')
+  }
+>>>>>>> 2b029d5 (20200609)
   next()
 })
 

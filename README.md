@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 # vue_cms
+=======
+# vue_music
+>>>>>>> 2b029d5 (20200609)
 
 ## Project setup
 ```
