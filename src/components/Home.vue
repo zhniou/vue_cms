@@ -1,5 +1,5 @@
 <template>
-<!-- 头部区域 -->
+<!-- 头部区 -->
 <el-container class="home_container">
   <el-header>
     <div>
